@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-inter text-white;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(76, 201, 240, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(157, 78, 221, 0.08) 0%, transparent 25%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-orbitron;
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
+  }
+  
+  .section-title {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center relative;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-24 bg-crystal-blue mt-4;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-crystal-gradient rounded-lg font-orbitron font-bold text-white 
+    transform transition-all duration-300 shadow-lg hover:shadow-crystal-blue/30 hover:-translate-y-1 
+    focus:outline-none focus:ring-2 focus:ring-crystal-blue/50;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-nebula-purple rounded-lg font-orbitron 
+    font-bold text-white transform transition-all duration-300 hover:bg-nebula-purple/20 
+    hover:shadow-nebula-purple/30 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-nebula-purple/50;
+  }
+  
+  .gem-card {
+    @apply relative bg-space-blue border border-crystal-blue/20 rounded-lg overflow-hidden
+    backdrop-filter backdrop-blur-sm transition-all duration-300 
+    hover:shadow-[0_0_15px_rgba(76,201,240,0.3)] hover:-translate-y-1;
+  }
+  
+  .gem-card::before {
+    content: "";
+    @apply absolute top-0 left-0 w-full h-1 bg-crystal-gradient;
+  }
+  
+  .crystal-text {
+    @apply bg-clip-text text-transparent bg-crystal-gradient font-orbitron;
+  }
+
+  .star {
+    @apply absolute rounded-full bg-white;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-space-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-crystal-gradient rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-nebula-purple;
+}
