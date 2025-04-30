@@ -26,7 +26,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'Will there be food and accommodation?',
-      answer: 'Yes, for in-person participants, meals and snacks will be provided throughout the event. However, accommodation is not included, though we have partnered with nearby hotels to offer discounted rates for participants traveling from out of town.'
+      answer: 'Yes, for in-person participants, meals and snacks will be provided throughout the event. However, participant are allow to stay on the vanue on the physical hack days'
     },
     {
       question: 'Do I retain the intellectual property rights to my project?',
