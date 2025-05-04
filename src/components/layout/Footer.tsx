@@ -12,11 +12,11 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-2 mb-4">
               
               <span className="font-orbitron font-bold text-2xl">
-              DEV<span className="text-blue-600">MATCH</span>
+              DEV<span className="text-blue-600">Match</span>
               </span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              DEVMATCH brings together the brightest minds in tech for a cosmic journey of innovation.
+              DEVMatch brings together the brightest minds in tech for a cosmic journey of innovation.
               Join us as we hack the future!
             </p>
             <div className="flex space-x-4">
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
         
         <div className="border-t border-gray-700 pt-8 mt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} DEVMATCH. All rights reserved. Made with <Heart className="inline-block w-4 h-4 text-glowing-pink" /> for the dev community.
+            © {currentYear} DEVMatch. All rights reserved. Made with <Heart className="inline-block w-4 h-4 text-glowing-pink" /> for the dev community.
           </p>
         </div>
       </div>

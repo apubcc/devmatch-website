@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   const hackathonDate = new Date('2025-08-11T00:00:00');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center py-20 px-4 overflow-hidden bg-gradient-to-b from-transparent to-space-dark ">
       {/* Animated shapes */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-nebula-purple/10 blur-3xl animate-float"></div>
       <div className="absolute bottom-1/4 right-1/4 w-72 h-72 rounded-full bg-crystal-blue/10 blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
       
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-orbitron font-black mb-4 tracking-wider">
-          DEV<span className="text-blue-600">MATCH</span>
+          DEV<span className="text-blue-600">Match</span>
         </h1>
         
         <div className="relative inline-block mb-6">

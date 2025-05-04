@@ -11,15 +11,15 @@ import Schedule from './components/sections/Schedule';
 import FAQ from './components/sections/FAQ';
 import Community from './components/sections/Community';
 import Footer from './components/layout/Footer';
-import StarryBackground from './components/ui/StarryBackground';
+import GlobeBackground from './components/ui/globe';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-space-dark text-white overflow-hidden">
-      <StarryBackground />
-      <div className="relative z-10">
+    <div className=" bg-space-dark text-white overflow-hidden">
+      <GlobeBackground/>
+      <div className=" z-10 ">
         <Header />
-        <main>
+        <main >
           <Hero />
           <About />
           <EventDetails />

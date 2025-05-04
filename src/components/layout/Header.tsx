@@ -40,7 +40,7 @@ const Header: React.FC = () => {
           <div className="flex items-center space-x-2">
             
             <span className="font-orbitron font-bold text-2xl">
-              DEV<span className="text-blue-600">MATCH</span>
+              DEV<span className="text-blue-600">Match</span>
             </span>
           </div>
 

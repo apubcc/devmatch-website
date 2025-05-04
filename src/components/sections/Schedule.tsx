@@ -20,55 +20,55 @@ const Schedule: React.FC = () => {
       date: 'August 9, 2025',
       name: 'Day 1',
       events: [
-        // {
-        //   time: '4:00 PM - 5:30 PM',
-        //   title: 'Check-in & Registration',
-        //   description: 'Arrive, register, and pick up your hackathon swag pack.',
-        //   location: 'Main Entrance',
-        //   type: 'activity'
-        // },
-        // {
-        //   time: '6:00 PM - 6:30 PM',
-        //   title: 'Opening Ceremony',
-        //   description: 'Welcome address, introduction to tracks, and event guidelines.',
-        //   location: 'Main Stage',
-        //   type: 'milestone'
-        // },
-        // {
-        //   time: '6:30 PM - 7:30 PM',
-        //   title: 'Keynote Speech: "The Future of Tech"',
-        //   description: 'Visionary talk by industry leader on emerging tech trends.',
-        //   location: 'Main Stage',
-        //   type: 'activity'
-        // },
-        // {
-        //   time: '7:30 PM - 8:30 PM',
-        //   title: 'Sponsor Showcase',
-        //   description: 'Meet our sponsors and learn about their technologies.',
-        //   location: 'Exhibition Hall',
-        //   type: 'activity'
-        // },
-        // {
-        //   time: '8:30 PM',
-        //   title: 'Hacking Begins!',
-        //   description: 'Form teams, brainstorm ideas, and start coding.',
-        //   location: 'Hacking Zones',
-        //   type: 'milestone'
-        // },
-        // {
-        //   time: '9:00 PM - 10:00 PM',
-        //   title: 'Team Building Workshop',
-        //   description: 'Optional session for solo participants to find teammates.',
-        //   location: 'Workshop Room A',
-        //   type: 'workshop'
-        // },
-        // {
-        //   time: '11:00 PM',
-        //   title: 'Late Night Snacks',
-        //   description: 'Energy boost to keep you coding through the night.',
-        //   location: 'Dining Area',
-        //   type: 'break'
-        // }
+      // {
+      //   time: '4:00 PM - 5:30 PM',
+      //   title: 'Check-in & Registration',
+      //   description: 'Arrive, register, and pick up your hackathon swag pack.',
+      //   location: 'Main Entrance',
+      //   type: 'activity'
+      // },
+      // {
+      //   time: '6:00 PM - 6:30 PM',
+      //   title: 'Opening Ceremony',
+      //   description: 'Welcome address, introduction to tracks, and event guidelines.',
+      //   location: 'Main Stage',
+      //   type: 'milestone'
+      // },
+      // {
+      //   time: '6:30 PM - 7:30 PM',
+      //   title: 'Keynote Speech: "The Future of Tech"',
+      //   description: 'Visionary talk by industry leader on emerging tech trends.',
+      //   location: 'Main Stage',
+      //   type: 'activity'
+      // },
+      // {
+      //   time: '7:30 PM - 8:30 PM',
+      //   title: 'Sponsor Showcase',
+      //   description: 'Meet our sponsors and learn about their technologies.',
+      //   location: 'Exhibition Hall',
+      //   type: 'activity'
+      // },
+      // {
+      //   time: '8:30 PM',
+      //   title: 'Hacking Begins!',
+      //   description: 'Form teams, brainstorm ideas, and start coding.',
+      //   location: 'Hacking Zones',
+      //   type: 'milestone'
+      // },
+      // {
+      //   time: '9:00 PM - 10:00 PM',
+      //   title: 'Team Building Workshop',
+      //   description: 'Optional session for solo participants to find teammates.',
+      //   location: 'Workshop Room A',
+      //   type: 'workshop'
+      // },
+      // {
+      //   time: '11:00 PM',
+      //   title: 'Late Night Snacks',
+      //   description: 'Energy boost to keep you coding through the night.',
+      //   location: 'Dining Area',
+      //   type: 'break'
+      // }
       ]
     },
     {

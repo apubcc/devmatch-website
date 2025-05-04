@@ -26,7 +26,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="section-container relative">
+    <section id="about" className="section-container relative bg-gradient-to-t from-transparent to-space-dark pointer-events-none">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-nebula-purple/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-crystal-blue/5 rounded-full blur-3xl"></div>
@@ -36,7 +36,7 @@ const About: React.FC = () => {
       <div className="max-w-4xl mx-auto mb-16">
         <p className="text-lg text-gray-300 text-center">
           DEVMATCH is not just a hackathon; it's a cosmic journey into the future of technology. 
-          For 48 exhilarating hours, developers, designers, and visionaries will collaborate to 
+          For 168 exhilarating hours, developers, designers, and visionaries will collaborate to 
           create breakthrough solutions that address real-world challenges while exploring the 
           frontiers of innovation.
         </p>
