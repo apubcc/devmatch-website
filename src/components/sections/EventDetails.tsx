@@ -15,8 +15,8 @@ const EventDetails: React.FC = () => {
                 <Calendar className="h-8 w-8 text-crystal-blue" />
               </div>
               <h3 className="text-lg font-orbitron font-bold mb-2">Date</h3>
-              <p className="text-gray-300">August 9–11, 2025</p>
-              <p className="text-gray-400 text-sm mt-1">48 hours of Physical Hack</p>
+              <p className="text-gray-300">August 2–10, 2025</p>
+              <p className="text-gray-400 text-sm mt-1">168 hours of Hack</p>
             </div>
             
             {/* Location */}
