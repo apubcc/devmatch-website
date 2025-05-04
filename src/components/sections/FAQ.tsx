@@ -10,7 +10,7 @@ const FAQ: React.FC = () => {
   const faqs: FAQItem[] = [
     {
       question: 'Who can participate in DEVMATCH?',
-      answer: 'DEVMATCH is open to developers, designers, and tech enthusiasts of all skill levels. Whether you\'re a seasoned professional or just starting your coding journey, everyone is welcome to join. Participants must be at least 18 years old or have parental consent.'
+      answer: 'DEVMatch is open to developers, designers, and tech enthusiasts of all skill levels. Whether you\'re a seasoned professional or just starting your coding journey, everyone is welcome to join. Participants must be at least 18 years old or have parental consent.'
     },
     {
       question: 'Do I need to have a team to register?',
@@ -18,7 +18,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'Is there a registration fee?',
-      answer: 'No, participation in DEVMATCH is completely free. We believe in making innovation accessible to everyone. However, registration is required and spots are limited, so be sure to secure your place early.'
+      answer: 'No, participation in DEVMatch is completely free. We believe in making innovation accessible to everyone. However, registration is required and spots are limited, so be sure to secure your place early.'
     },
     {
       question: 'What should I bring to the hackathon?',
@@ -38,7 +38,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'Is this hackathon only for experienced developers?',
-      answer: 'Not at all! DEVMATCH welcomes participants of all skill levels. We have designated tracks and challenges suitable for beginners, and our mentors will be available throughout the event to provide guidance and support.'
+      answer: 'Not at all! DEVMatch welcomes participants of all skill levels. We have designated tracks and challenges suitable for beginners, and our mentors will be available throughout the event to provide guidance and support.'
     },
     {
       question: 'How are projects judged?',

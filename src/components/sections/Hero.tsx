@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
         
         <div className="relative inline-block mb-6">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-orbitron font-medium tracking-wide">
-            <span className="crystal-text">CODE TO THE STAR</span>
+            <span className="text-blue-400">CODE TO THE STAR</span>
           </h2>
           <div className="absolute w-full h-0.5 bg-crystal-gradient bottom-0 left-0"></div>
         </div>
