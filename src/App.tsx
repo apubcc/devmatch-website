@@ -1,4 +1,4 @@
-
+import { useEffect, useState } from 'react';
 import Header from './components/layout/Header';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
@@ -14,9 +14,17 @@ import Footer from './components/layout/Footer';
 import GlobeBackground from './components/ui/globe';
 import StarryBackground from './components/ui/StarryBackground';
 import VirtualPet from './components/ui/pet';
+import IntroPage from './components/IntroPage';
+
+
+
 
 function App() {
-  return (
+  const [showIntro, setShowIntro] = useState(true);
+
+  return showIntro ? (
+    <IntroPage onFinish={() => setShowIntro(false)} />
+  ) : (
     <div className=" bg-space-dark text-white overflow-hidden ">
       <GlobeBackground/>
       <StarryBackground/>
