@@ -1,111 +1,60 @@
 import { useState, useEffect, useRef } from 'react';
 import petImage from '../Public/dancing-ditto-ditto.gif'; // add a cute GIF or PNG
 
-
 const VirtualPet = () => {
     const [x, setX] = useState(100);
-    const [y, setY] = useState(window.innerHeight - 80);
     const [direction, setDirection] = useState<'left' | 'right'>('right');
-    const [isDragging, setIsDragging] = useState(false);
-    const [isFalling, setIsFalling] = useState(false);
+    const [isJumping, setIsJumping] = useState(false);
+    const speed = 0.7; // pixels per frame for smoothness
+    const requestRef = useRef<number | null>(null);
   
-    const offset = useRef({ x: 0, y: 0 });
-    const gravityRef = useRef<number | null>(null);
-  
-    // Gravity drop when not dragging
+    // Randomly change direction every few seconds
     useEffect(() => {
-      if (isDragging) return;
-  
-      const groundY = window.innerHeight - 80;
-      const fall = () => {
-        setY(prevY => {
-          if (prevY >= groundY) {
-            cancelAnimationFrame(gravityRef.current!);
-            setIsFalling(false);
-            return groundY;
-          }
-          setIsFalling(true);
-          return prevY + 10;
-        });
-        gravityRef.current = requestAnimationFrame(fall);
-      };
-  
-      gravityRef.current = requestAnimationFrame(fall);
-  
-      return () => {
-        if (gravityRef.current) cancelAnimationFrame(gravityRef.current);
-      };
-    }, [isDragging]);
-  
-    // Walk if not dragging
-    useEffect(() => {
-      if (isDragging || isFalling) return;
-  
       const flipInterval = setInterval(() => {
-        if (Math.random() < 0.3) {
+        const shouldFlip = Math.random() < 0.3;
+        if (shouldFlip) {
           setDirection(prev => (prev === 'left' ? 'right' : 'left'));
         }
       }, 3000);
   
-      const walk = () => {
-        setX(prev => {
-          const speed = 0.7;
-          const maxX = window.innerWidth - 80;
-          const next = direction === 'right' ? prev + speed : prev - speed;
-          return Math.max(0, Math.min(maxX, next));
-        });
-      };
+      return () => clearInterval(flipInterval);
+    }, []);
   
-      const walkInterval = setInterval(walk, 16);
-      return () => {
-        clearInterval(flipInterval);
-        clearInterval(walkInterval);
-      };
-    }, [direction, isDragging, isFalling]);
-  
-    const handleMouseDown = (e: React.MouseEvent) => {
-      setIsDragging(true);
-      offset.current = {
-        x: e.clientX - x,
-        y: e.clientY - y,
-      };
-    };
-  
-    const handleMouseMove = (e: MouseEvent) => {
-      if (isDragging) {
-        setX(e.clientX - offset.current.x);
-        setY(e.clientY - offset.current.y);
-      }
-    };
-  
-    const handleMouseUp = () => {
-      setIsDragging(false); // triggers gravity
-    };
-  
+    // Smooth movement using requestAnimationFrame
     useEffect(() => {
-      window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('mouseup', handleMouseUp);
-      return () => {
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('mouseup', handleMouseUp);
+      const animate = () => {
+        setX(prev => {
+          const maxX = window.innerWidth - 80;
+          const nextX = direction === 'left' ? prev + speed : prev - speed;
+          return Math.max(0, Math.min(maxX, nextX));
+        });
+  
+        requestRef.current = requestAnimationFrame(animate);
       };
-    }, [isDragging]);
+  
+      requestRef.current = requestAnimationFrame(animate);
+      return () => {
+        if (requestRef.current) cancelAnimationFrame(requestRef.current);
+      };
+    }, [direction]);
+  
+    const handleClick = () => {
+      setIsJumping(true);
+      setTimeout(() => setIsJumping(false), 400);
+    };
   
     return (
       <div
-        onMouseDown={handleMouseDown}
-        className={`fixed z-50 transition-transform duration-100 cursor-grab active:cursor-grabbing`}
-        style={{
-          left: `${x}px`,
-          top: `${y}px`,
-        }}
+        onClick={handleClick}
+        className={`fixed bottom-0 z-50 transition-transform duration-200 cursor-pointer ${
+          isJumping ? 'animate-bounce' : ''
+        }`}
+        style={{ left: `${x}px` }}
       >
         <img
           src={petImage}
           alt="Pet"
-          className={`w-16 h-20 transition-transform duration-300 ${
-            direction === 'left' ? 'scale-x-[-1]' : ''
-          }`}
+          className={`w-16 h-16 ${direction === 'left' ? 'scale-x-[-1]' : ''}`}
         />
       </div>
     );
