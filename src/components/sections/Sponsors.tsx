@@ -2,7 +2,7 @@ import React from 'react';
 
 const Sponsors: React.FC = () => {
   const sponsors = [
-    { name: 'BGA (Blockchain for Good)', logo: '/public/BGA-Logo.png', width: 180 }
+    { name: 'BGA (Blockchain for Good)', logo: '/BGA-Logo.png', width: 180 }
   ];
 
   return (
