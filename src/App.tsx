@@ -36,7 +36,6 @@ function App() {
           <About />
           <EventDetails />
           <Tracks />
-          <Prizes />
           <Sponsors />
           <Judges />
           <Schedule />
