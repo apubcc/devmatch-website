@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { LinkIcon, Gift, HeartHandshake } from 'lucide-react';
 
+
 interface Mission {
   title: string;
   description: string;
@@ -35,7 +36,7 @@ const Tracks: React.FC = () => {
         }
       ],
       docLink: 'https://blockchainforgood.dev/docs', // Replace with actual doc link if different
-      logo: '/logos/bga.png' // Make sure this image exists in your public folder
+      logo: '/BGA-Logo.png'
     }
   ];
 
@@ -76,7 +77,7 @@ const Tracks: React.FC = () => {
               className="gem-card p-8 transition-all duration-500 opacity-100 transform translate-y-0"
             >
               <div className="flex items-center mb-6 gap-4">
-                <div className="p-2 bg-white rounded-full w-16 h-16 flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-300">
+                <div className="p-2 bg-black rounded-full w-16 h-16 flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-300">
                   <img
                     src={track.logo}
                     alt={`${track.sponsor} logo`}
