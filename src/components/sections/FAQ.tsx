@@ -100,7 +100,7 @@ const FAQ: React.FC = () => {
           <p className="text-gray-300 mb-6">
             Reach out to our team and we'll be happy to help with any additional questions.
           </p>
-          <a href="mailto:info@devmatch.io" className="btn-primary inline-block">
+          <a href="mailto:info@apubcc.org" className="btn-primary inline-block">
             Contact Us
           </a>
         </div>
