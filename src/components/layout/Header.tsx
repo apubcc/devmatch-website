@@ -37,11 +37,13 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
+            <img
+              src="/public/Devmatch-logo.jpg"
+              alt="DEVMatch Logo"
+              className="w-10 h-10 rounded-full object-cover"
+            />
             
-            <span className="font-orbitron font-bold text-2xl">
-              DEV<span className="text-blue-600">Match</span>
-            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -53,10 +55,18 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <a href="#register" className="hidden md:block btn-primary">
-            Register Now
-          </a>
+          {/* CTA Button (Desktop with Tooltip) */}
+          <div className="relative group hidden md:block">
+            <button
+              className="btn-primary cursor-not-allowed opacity-60"
+              disabled
+            >
+              Register Now
+            </button>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-sm rounded bg-gray-800 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 whitespace-nowrap">
+              Coming soon
+            </div>
+          </div>
 
           {/* Mobile Menu Button */}
           <button 
@@ -88,14 +98,18 @@ const Header: React.FC = () => {
                 </a>
               </div>
             ))}
-            <div className="pt-2">
-              <a 
-                href="#register" 
-                className="block w-full text-center btn-primary"
-                onClick={() => setIsMenuOpen(false)}
+
+            {/* CTA Button (Mobile with Tooltip) */}
+            <div className="relative group pt-2">
+              <button
+                className="block w-full text-center btn-primary cursor-not-allowed opacity-60"
+                disabled
               >
                 Register Now
-              </a>
+              </button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-sm rounded bg-gray-800 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 whitespace-nowrap">
+                Coming soon
+              </div>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Sponsors: React.FC = () => {
   const sponsors = [
-    { name: 'BGA (Blockchain for Good)', logo: '/logos/bga.png', width: 180 }
+    { name: 'BGA (Blockchain for Good)', logo: '/public/BGA-Logo.png', width: 180 }
   ];
 
   return (
@@ -20,7 +20,7 @@ const Sponsors: React.FC = () => {
         {sponsors.map((sponsor, index) => (
           <div 
             key={index} 
-            className="gem-card p-6 flex flex-col items-center justify-center group"
+            className=" p-6 flex flex-col items-center justify-center group"
             style={{ width: sponsor.width + 60 + 'px', height: sponsor.width + 60 + 'px' }}
           >
             <div 

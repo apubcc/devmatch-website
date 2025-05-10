@@ -63,7 +63,7 @@ const Community: React.FC = () => {
         
         {/* Community highlights */}
         <div className="mt-20 max-w-5xl mx-auto text-center">
-          <h3 className="text-2xl font-orbitron font-bold mb-6">Why Join Our Community</h3>
+          <h3 className="text-2xl font-orbitron font-bold mb-6">Why Join Our Club</h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="gem-card p-6">
@@ -104,9 +104,17 @@ const Community: React.FC = () => {
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Join us for an unforgettable journey of innovation, collaboration, and cosmic discovery.
           </p>
-          <a href="#register" className="btn-primary text-lg px-10 py-4">
-            Register for DEVMATCH
-          </a>
+          <div className="relative group hidden md:block">
+            <button
+              className="btn-primary cursor-not-allowed opacity-60"
+              disabled
+            >
+              Register For DEVMatch
+            </button>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-sm rounded bg-gray-800 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+              Coming soon
+            </div>
+          </div>
         </div>
       </div>
     </section>
