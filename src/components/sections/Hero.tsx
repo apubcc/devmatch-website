@@ -1,6 +1,6 @@
 import React from 'react';
 import CountdownTimer from '../ui/CountdownTimer';
-import { Zap } from 'lucide-react';
+
 
 const Hero: React.FC = () => {
   // Set your hackathon date here
@@ -38,10 +38,17 @@ const Hero: React.FC = () => {
         </div>
         
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-          <a href="#register" className="btn-primary flex items-center justify-center">
-            <Zap className="mr-2 h-5 w-5" />
-            Register Now
-          </a>
+        <div className="relative group hidden md:block">
+            <button
+              className="btn-primary cursor-not-allowed opacity-60"
+              disabled
+            >
+              Register Now
+            </button>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-sm rounded bg-gray-800 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+              Coming soon
+            </div>
+          </div>
           <a href="#about" className="btn-secondary">
             Learn More
           </a>
