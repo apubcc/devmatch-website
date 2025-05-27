@@ -22,6 +22,7 @@ const Sponsors: React.FC = () => {
           <div 
             key={index} 
             className=" p-6 flex flex-col items-center justify-center group"
+            className=" p-6 flex flex-col items-center justify-center group"
             style={{ width: sponsor.width + 60 + 'px', height: sponsor.width + 60 + 'px' }}
           >
             <div 

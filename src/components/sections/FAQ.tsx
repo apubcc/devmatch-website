@@ -14,7 +14,7 @@ const FAQ: React.FC = () => {
     },
     {
       question: 'Do I need to have a team to register?',
-      answer: 'No, you can register as an individual and form a team during the hackathon. We\'ll have team formation activities to help solo participants find teammates. Teams can have up to 4 members, but you\'re also welcome to work alone if you prefer.'
+      answer: 'You can register alone, but you must form a team of at least 2 members to participate. We’ll have team formation sessions to help solo participants connect and form groups during the event. Maximum team size is 4.'
     },
     {
       question: 'Is there a registration fee?',
@@ -100,7 +100,7 @@ const FAQ: React.FC = () => {
           <p className="text-gray-300 mb-6">
             Reach out to our team and we'll be happy to help with any additional questions.
           </p>
-          <a href="mailto:info@devmatch.io" className="btn-primary inline-block">
+          <a href="mailto:info@apubcc.org" className="btn-primary inline-block">
             Contact Us
           </a>
         </div>

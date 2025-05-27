@@ -17,13 +17,29 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className="section-container relative bg-gradient-to-t from-transparent to-space-dark pointer-events-none">
+      {/* Background Logo */}
+      <div className="absolute top-1/2 left-1/2 w-[1500px] aspect-square -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
+        <img
+          src="/public/Devmatch-logo.jpg"
+          alt="DEVMatch Logo"
+          className="w-full h-full object-cover rounded-full"
+          style={{
+            maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)',
+            opacity: 0.2
+          }}
+        />
+      </div>
+
+
+
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-nebula-purple/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-crystal-blue/5 rounded-full blur-3xl"></div>
-      
+
       <h2 className="section-title">About The Hackathon</h2>
-      
-      <div className="max-w-4xl mx-auto mb-16">
+
+      <div className="max-w-4xl mx-auto mb-16 relative z-10">
         <p className="text-lg text-gray-300 text-center">
           DEVMatch is not just a hackathon, it's a cosmic journey into the future of technology. 
           For 168 exhilarating hours, developers, designers, and visionaries will collaborate to 
@@ -31,8 +47,8 @@ const About: React.FC = () => {
           frontiers of innovation.
         </p>
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 relative z-10">
         <div className="gem-card p-8 relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-crystal-blue/10 rounded-full blur-2xl group-hover:bg-crystal-blue/20 transition-all duration-500"></div>
           <h3 className="text-2xl font-orbitron font-bold mb-4 relative z-10">Our Mission</h3>
@@ -55,7 +71,7 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto relative z-10">
         {features.map((feature, index) => (
           <div 
             key={index} 

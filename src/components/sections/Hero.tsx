@@ -1,6 +1,6 @@
 import React from 'react';
 import CountdownTimer from '../ui/CountdownTimer';
-import { Zap } from 'lucide-react';
+
 
 const Hero: React.FC = () => {
   // Set your hackathon date here
