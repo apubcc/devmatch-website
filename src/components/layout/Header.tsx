@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import NavLink from '../ui/NavLink';
-
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,7 +53,7 @@ const Header: React.FC = () => {
           </nav>
 
           {/* CTA Button */}
-          <a href="#register" className="hidden md:block btn-primary">
+          <a href="https://devmatch-hackathon.devfolio.co/" target="_blank" className="hidden md:block btn-primary">
             Register Now
           </a>
 
