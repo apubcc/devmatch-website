@@ -20,7 +20,7 @@ const About: React.FC = () => {
       {/* Background Logo */}
       <div className="absolute top-1/2 left-1/2 w-[1500px] aspect-square -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
         <img
-          src="/public/Devmatch-logo.jpg"
+          src="/Devmatch-logo.jpg"
           alt="DEVMatch Logo"
           className="w-full h-full object-cover rounded-full"
           style={{

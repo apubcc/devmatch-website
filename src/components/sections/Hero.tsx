@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
         
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
           <a href="https://devmatch-hackathon.devfolio.co/" target="_blank" className="btn-primary flex items-center justify-center">
-            <Zap className="mr-2 h-5 w-5" />
+            
             Register Now
           </a>
           <a href="#about" className="btn-secondary">
