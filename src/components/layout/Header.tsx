@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import NavLink from '../ui/NavLink';
-
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,18 +54,10 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* CTA Button (Desktop with Tooltip) */}
-          <div className="relative group hidden md:block">
-            <button
-              className="btn-primary cursor-not-allowed opacity-60"
-              disabled
-            >
-              Register Now
-            </button>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-sm rounded bg-gray-800 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 whitespace-nowrap">
-              Coming soon
-            </div>
-          </div>
+          {/* CTA Button */}
+          <a href="https://devmatch-hackathon.devfolio.co/" target="_blank" className="hidden md:block btn-primary">
+            Register Now
+          </a>
 
           {/* Mobile Menu Button */}
           <button 

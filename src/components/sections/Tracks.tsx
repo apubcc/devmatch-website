@@ -22,6 +22,23 @@ interface Track {
 const Tracks: React.FC = () => {
   const tracks: Track[] = [
     {
+      id: 'sui',
+      icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
+      sponsor: 'SUI',
+      description:
+        'Sui is a Layer 1 blockchain designed to offer the benefits of Web3 with the ease of Web2. It focuses on scalability, low transaction costs, and a user-friendly experience',
+      totalPrize: '$4,000 USDC',
+      missions: [
+        {
+          title: 'TBA',
+          description: 'Mission description will be announced soon.',
+          prize: 'Prize TBA'
+        }
+      ],
+      docLink: 'https://blockchainforgood.dev/docs', // Replace with actual doc link if different
+      logo: '/sui-logo.webp'
+    },
+    {
       id: 'bga',
       icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
       sponsor: 'BGA (Blockchain for Good)',
@@ -77,7 +94,7 @@ const Tracks: React.FC = () => {
               className="gem-card p-8 transition-all duration-500 opacity-100 transform translate-y-0"
             >
               <div className="flex items-center mb-6 gap-4">
-                <div className="p-2 bg-black rounded-full w-16 h-16 flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-300">
+                <div className="p-2 rounded-full w-16 h-16 flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-300">
                   <img
                     src={track.logo}
                     alt={`${track.sponsor} logo`}

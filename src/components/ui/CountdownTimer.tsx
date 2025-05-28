@@ -48,7 +48,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     <div className="flex justify-center space-x-4 md:space-x-6">
       {timeUnits.map((unit, index) => (
         <div key={unit.label} className="flex flex-col items-center">
-          <div className="gem-card w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center animate-float" 
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center animate-float rounded-xl border border-white/20 bg-white/5 backdrop-blur-lg text-white" 
                style={{ animationDelay: `${index * 0.2}s` }}>
             <span className="font-orbitron font-bold text-2xl sm:text-3xl md:text-4xl text-white">
               {unit.value.toString().padStart(2, '0')}
