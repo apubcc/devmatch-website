@@ -9,8 +9,7 @@ const Community: React.FC = () => {
     { icon: <Github className="h-8 w-8" />, name: 'GitHub', url: 'https://github.com/apubcc', color: 'bg-[#333333]' },
     { icon: <Youtube className="h-8 w-8" />, name: 'YouTube', url: 'https://www.youtube.com/channel/UC0WUwwcvh_A7to7YwoK-mrw', color: 'bg-[#FF0000]' },
     { icon: <Linkedin className="h-8 w-8" />, name: 'Linkedin', url: 'https://www.linkedin.com/company/apu-blockchain-crypto-club-apu-bcc/', color: 'bg-[#38bdf8]' }
-    
-
+  
   ];
 
   return (
@@ -63,7 +62,7 @@ const Community: React.FC = () => {
         
         {/* Community highlights */}
         <div className="mt-20 max-w-5xl mx-auto text-center">
-          <h3 className="text-2xl font-orbitron font-bold mb-6">Why Join Our Club</h3>
+          <h3 className="text-2xl font-orbitron font-bold mb-6">Why Join Our Community</h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="gem-card p-6">
@@ -97,28 +96,20 @@ const Community: React.FC = () => {
         </div>
         
         {/* CTA */}
-        <div className="mt-20 text-center">
+        <div className="mt-20 text-center relative z-20">
           <h3 className="text-3xl font-orbitron font-bold mb-6 crystal-text">
             Ready to Launch?
           </h3>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Join us for an unforgettable journey of innovation, collaboration, and cosmic discovery.
           </p>
-          <div className="relative group hidden md:block">
-            <button
-              className="btn-primary cursor-not-allowed opacity-60"
-              disabled
-            >
-              Register For DEVMatch
-            </button>
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-sm rounded bg-gray-800 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
-              Coming soon
-            </div>
-          </div>
+          <a href="https://devmatch-hackathon.devfolio.co/" className="btn-primary text-lg px-10 py-4 inline-block">
+            Register for DEVMATCH
+          </a>
         </div>
       </div>
     </section>
   );
 };
 
-export default Community;
+export default Community;   
