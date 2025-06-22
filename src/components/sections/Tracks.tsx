@@ -26,16 +26,26 @@ const Tracks: React.FC = () => {
       icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
       sponsor: 'SUI',
       description:
-        'Sui is a Layer 1 blockchain designed to offer the benefits of Web3 with the ease of Web2. It focuses on scalability, low transaction costs, and a user-friendly experience',
+        'Explore the capabilities of the Sui ecosystem by participating in one of three challenge tracks, each tailored to showcase unique components of Sui’s infrastructure and development tools. Participants can choose from moderate to advanced difficulty levels, with a focus on zkLogin integration,on-chain smart contract marketplaces, or privacy-preserving infrastructure.',
       totalPrize: '$4,000 USDC',
       missions: [
         {
-          title: 'TBA',
+          title: 'zkLogin Application (Moderate Difficulty)',
+          description: 'Mission description will be announced soon.',
+          prize: 'Prize TBA'
+        },
+        {
+          title: ' On-chain Marketplace (Moderate Difficulty)',
+          description: 'Mission description will be announced soon.',
+          prize: 'Prize TBA'
+        },
+        {
+          title: 'Password Manager using Walrus & Seal (Advanced Difficulty)',
           description: 'Mission description will be announced soon.',
           prize: 'Prize TBA'
         }
       ],
-      docLink: 'https://blockchainforgood.dev/docs', // Replace with actual doc link if different
+      docLink: 'https://suifoundation.notion.site/DEVMatch-Hackathon-2025-20337af41c6e80d4a3f9e76087f4f40c', // Replace with actual doc link if different
       logo: '/sui-logo.webp'
     },
     {
@@ -43,7 +53,7 @@ const Tracks: React.FC = () => {
       icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
       sponsor: 'BGA (Blockchain for Good)',
       description:
-        'Blockchain for Good Alliance (BGA) champions the use of blockchain technology to create positive, real-world social and environmental impact.',
+        'Blockchain for Good Alliance (BGA) champions the use of blockchain technology to create positive, real-world social and environmental impact',
       totalPrize: '$2,000 USDC',
       missions: [
         {
@@ -54,6 +64,23 @@ const Tracks: React.FC = () => {
       ],
       docLink: 'https://blockchainforgood.dev/docs', // Replace with actual doc link if different
       logo: '/BGA-Logo.png'
+    },
+    {
+      id: 'the_graph',
+      icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
+      sponsor: 'The Graph',
+      description:
+        'The Graph (GRT) is a decentralized indexing and query protocol for blockchain data. It allows developers to easily access and retrieve information from blockchains like Ethereum, enabling the creation and use of decentralized applications (dApps)',
+      totalPrize: '$2,000 USDC',
+      missions: [
+        {
+          title: 'TBA',
+          description: 'Mission description will be announced soon.',
+          prize: 'Prize TBA'
+        }
+      ],
+      docLink: 'https://blockchainforgood.dev/docs', // Replace with actual doc link if different
+      logo: '/the-graph-grt-logo.png'
     }
   ];
 
@@ -120,7 +147,7 @@ const Tracks: React.FC = () => {
                     <li key={index} className="border-l-4 border-crystal-blue pl-4">
                       <p className="text-white font-bold">{mission.title}</p>
                       <p className="text-gray-300 text-sm">{mission.description}</p>
-                      <p className="text-gray-400 text-sm mt-1">🎁 {mission.prize}</p>
+                      
                     </li>
                   ))}
                 </ul>

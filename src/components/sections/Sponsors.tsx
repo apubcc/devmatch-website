@@ -3,7 +3,8 @@ import React from 'react';
 const Sponsors: React.FC = () => {
   const sponsors = [
     { name: 'SUI', logo: '/sui-logo.webp', width: 180 },
-    { name: 'BGA (Blockchain for Good)', logo: '/BGA-Logo.png', width: 180 }
+    { name: 'BGA (Blockchain for Good)', logo: '/BGA-Logo.png', width: 180 },
+    { name: 'The Graph', logo: '/the-graph-grt-logo.png', width: 180 }
   ];
 
   const mediaPartners = [
