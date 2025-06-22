@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { LinkIcon, Gift, HeartHandshake } from 'lucide-react';
 
-
 interface Mission {
   title: string;
   description: string;
@@ -20,32 +19,60 @@ interface Track {
 }
 
 const Tracks: React.FC = () => {
+  const [activeTrack, setActiveTrack] = useState<string>('sui');
+  const [showAllMissions, setShowAllMissions] = useState<Record<string, boolean>>({});
+
+  const toggleShowAllMissions = (trackId: string) => {
+    setShowAllMissions((prev) => ({
+      ...prev,
+      [trackId]: !prev[trackId],
+    }));
+  };
+
   const tracks: Track[] = [
     {
       id: 'sui',
       icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
       sponsor: 'SUI',
       description:
-        'Explore the capabilities of the Sui ecosystem by participating in one of three challenge tracks, each tailored to showcase unique components of Sui’s infrastructure and development tools. Participants can choose from moderate to advanced difficulty levels, with a focus on zkLogin integration,on-chain smart contract marketplaces, or privacy-preserving infrastructure.',
+        'Explore the capabilities of the Sui ecosystem by participating in one of three challenge tracks, each tailored to showcase unique components of Sui’s infrastructure and development tools. Participants can choose from moderate to advanced difficulty levels, with a focus on zkLogin integration, on-chain smart contract marketplaces, or privacy-preserving infrastructure.',
       totalPrize: '$4,000 USDC',
       missions: [
         {
           title: 'zkLogin Application (Moderate Difficulty)',
-          description: 'Mission description will be announced soon.',
+          description: `Objective: 
+- Create an application that integrates and utilizes zkLogin.
+
+Key Tasks:
+- Implement zkLogin as the authentication method.
+- Showcase a real-world use case or user flow with zkLogin.
+- Provide seamless UX and secure session handling.`,
           prize: 'Prize TBA'
         },
         {
-          title: ' On-chain Marketplace (Moderate Difficulty)',
-          description: 'Mission description will be announced soon.',
+          title: 'On-chain Marketplace (Moderate Difficulty)',
+          description: `Objective: 
+- Build an on-chain marketplace utilizing Sui smart contracts as the backend.
+
+Key Tasks:
+- Design and implement core marketplace smart contracts using Move.
+- Support basic functionality (listing, purchasing, transferring assets).
+- You can either use the Kiosk standard, or implement another form of trading.`,
           prize: 'Prize TBA'
         },
         {
           title: 'Password Manager using Walrus & Seal (Advanced Difficulty)',
-          description: 'Mission description will be announced soon.',
+          description: `Objective: 
+- Create a password manager using Walrus and Seal as backend infrastructure.
+
+Key Tasks:
+- Integrate Walrus and Seal for secure, privacy-preserving storage.
+- Implement user-friendly encryption and retrieval workflows.
+- Ensure compliance with best practices in data security.`,
           prize: 'Prize TBA'
         }
       ],
-      docLink: 'https://suifoundation.notion.site/DEVMatch-Hackathon-2025-20337af41c6e80d4a3f9e76087f4f40c', // Replace with actual doc link if different
+      docLink: 'https://suifoundation.notion.site/DEVMatch-Hackathon-2025-20337af41c6e80d4a3f9e76087f4f40c',
       logo: '/sui-logo.webp'
     },
     {
@@ -53,7 +80,7 @@ const Tracks: React.FC = () => {
       icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
       sponsor: 'BGA (Blockchain for Good)',
       description:
-        'Blockchain for Good Alliance (BGA) champions the use of blockchain technology to create positive, real-world social and environmental impact',
+        'Blockchain for Good Alliance (BGA) champions the use of blockchain technology to create positive, real-world social and environmental impact.',
       totalPrize: '$2,000 USDC',
       missions: [
         {
@@ -62,7 +89,7 @@ const Tracks: React.FC = () => {
           prize: 'Prize TBA'
         }
       ],
-      docLink: 'https://blockchainforgood.dev/docs', // Replace with actual doc link if different
+      docLink: 'https://blockchainforgood.dev/docs',
       logo: '/BGA-Logo.png'
     },
     {
@@ -70,7 +97,7 @@ const Tracks: React.FC = () => {
       icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
       sponsor: 'The Graph',
       description:
-        'The Graph (GRT) is a decentralized indexing and query protocol for blockchain data. It allows developers to easily access and retrieve information from blockchains like Ethereum, enabling the creation and use of decentralized applications (dApps)',
+        'The Graph (GRT) is a decentralized indexing and query protocol for blockchain data. It allows developers to easily access and retrieve information from blockchains like Ethereum, enabling the creation and use of decentralized applications (dApps).',
       totalPrize: '$2,000 USDC',
       missions: [
         {
@@ -79,12 +106,10 @@ const Tracks: React.FC = () => {
           prize: 'Prize TBA'
         }
       ],
-      docLink: 'https://blockchainforgood.dev/docs', // Replace with actual doc link if different
+      docLink: 'https://blockchainforgood.dev/docs',
       logo: '/the-graph-grt-logo.png'
     }
   ];
-
-  const [activeTrack, setActiveTrack] = useState<string>(tracks[0].id);
 
   return (
     <section id="tracks" className="section-container">
@@ -131,7 +156,7 @@ const Tracks: React.FC = () => {
                 <h3 className="text-2xl md:text-3xl font-orbitron font-bold">{track.sponsor}</h3>
               </div>
 
-              <p className="text-gray-300 text-lg mb-6">{track.description}</p>
+              <p className="whitespace-pre-line text-gray-300 text-lg mb-6">{track.description}</p>
 
               <div className="mb-6">
                 <h4 className="text-xl font-orbitron font-bold text-white flex items-center gap-2">
@@ -143,13 +168,25 @@ const Tracks: React.FC = () => {
               <div className="mb-6">
                 <h4 className="text-xl font-orbitron font-bold mb-4 text-white">Missions</h4>
                 <ul className="space-y-4">
-                  {track.missions.map((mission, index) => (
-                    <li key={index} className="border-l-4 border-crystal-blue pl-4">
-                      <p className="text-white font-bold">{mission.title}</p>
-                      <p className="text-gray-300 text-sm">{mission.description}</p>
-                      
-                    </li>
-                  ))}
+                  {track.missions
+                    .slice(0, showAllMissions[track.id] ? track.missions.length : 1)
+                    .map((mission, index) => (
+                      <li key={`${track.id}-${index}`} className="border-l-4 border-crystal-blue pl-4">
+                        <p className="text-white font-bold">{mission.title}</p>
+                        <p className="text-gray-300 text-sm whitespace-pre-line">{mission.description}</p>
+                      </li>
+                    ))}
+
+                  {track.missions.length > 1 && (
+                    <div className="mt-4">
+                      <button
+                        onClick={() => toggleShowAllMissions(track.id)}
+                        className="text-xs text-crystal-blue underline"
+                      >
+                        {showAllMissions[track.id] ? 'Show Less Missions' : 'Show More Missions'}
+                      </button>
+                    </div>
+                  )}
                 </ul>
               </div>
 
