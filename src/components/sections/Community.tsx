@@ -9,8 +9,7 @@ const Community: React.FC = () => {
     { icon: <Github className="h-8 w-8" />, name: 'GitHub', url: 'https://github.com/apubcc', color: 'bg-[#333333]' },
     { icon: <Youtube className="h-8 w-8" />, name: 'YouTube', url: 'https://www.youtube.com/channel/UC0WUwwcvh_A7to7YwoK-mrw', color: 'bg-[#FF0000]' },
     { icon: <Linkedin className="h-8 w-8" />, name: 'Linkedin', url: 'https://www.linkedin.com/company/apu-blockchain-crypto-club-apu-bcc/', color: 'bg-[#38bdf8]' }
-    
-
+  
   ];
 
   return (
@@ -97,14 +96,14 @@ const Community: React.FC = () => {
         </div>
         
         {/* CTA */}
-        <div className="mt-20 text-center">
+        <div className="mt-20 text-center relative z-20">
           <h3 className="text-3xl font-orbitron font-bold mb-6 crystal-text">
             Ready to Launch?
           </h3>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Join us for an unforgettable journey of innovation, collaboration, and cosmic discovery.
           </p>
-          <a href="#register" className="btn-primary text-lg px-10 py-4">
+          <a href="https://devmatch-hackathon.devfolio.co/" className="btn-primary text-lg px-10 py-4 inline-block">
             Register for DEVMATCH
           </a>
         </div>
@@ -113,4 +112,4 @@ const Community: React.FC = () => {
   );
 };
 
-export default Community;
+export default Community;   

@@ -50,7 +50,6 @@ const Footer: React.FC = () => {
             <h3 className="font-orbitron font-bold text-lg mb-4 text-white">Contact Us</h3>
             <ul className="space-y-2">
               <li className="text-gray-300">info@apubcc.org</li>
-              <li className="text-gray-300">+60 123 </li>
               <li className="text-gray-300">Jalan Teknologi 5, Taman Teknologi Malaysia, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</li>
             </ul>
           </div>

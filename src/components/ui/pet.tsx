@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import petImage from '../Public/dancing-ditto-ditto.gif'; // add a cute GIF or PNG
+
 
 const VirtualPet = () => {
     const [x, setX] = useState(100);
@@ -52,7 +52,7 @@ const VirtualPet = () => {
         style={{ left: `${x}px` }}
       >
         <img
-          src={petImage}
+          src='/dancing-ditto-ditto.gif'
           alt="Pet"
           className={`w-16 h-16 ${direction === 'left' ? 'scale-x-[-1]' : ''}`}
         />

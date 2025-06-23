@@ -1,145 +1,211 @@
 import React, { useState } from 'react';
-import { Database, Brain, Rocket, Wrench } from 'lucide-react';
+import { LinkIcon, Gift, HeartHandshake } from 'lucide-react';
+
+interface Mission {
+  title: string;
+  description: string;
+  prize: string;
+}
 
 interface Track {
   id: string;
   icon: React.ReactNode;
-  title: string;
+  sponsor: string;
   description: string;
-  challenges: string[];
-  technologies: string[];
+  totalPrize: string;
+  missions: Mission[];
+  docLink: string;
+  logo: string;
 }
 
 const Tracks: React.FC = () => {
+  const [activeTrack, setActiveTrack] = useState<string>('sui');
+  const [showAllMissions, setShowAllMissions] = useState<Record<string, boolean>>({});
+
+  const toggleShowAllMissions = (trackId: string) => {
+    setShowAllMissions((prev) => ({
+      ...prev,
+      [trackId]: !prev[trackId],
+    }));
+  };
+
   const tracks: Track[] = [
     {
-      id: 'web3',
-      icon: <Database className="h-10 w-10 text-crystal-blue" />,
-      title: 'Web3 & Blockchain',
-      description: 'Explore the decentralized frontier with blockchain technology and Web3 innovations.',
-      challenges: [
-        'Create a decentralized application (dApp) that solves a real-world problem',
-        'Build a blockchain-based solution for supply chain transparency',
-        'Develop an innovative NFT project with practical utility'
+      id: 'sui',
+      icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
+      sponsor: 'SUI',
+      description:
+        'Explore the capabilities of the Sui ecosystem by participating in one of three challenge tracks, each tailored to showcase unique components of Sui’s infrastructure and development tools. Participants can choose from moderate to advanced difficulty levels, with a focus on zkLogin integration, on-chain smart contract marketplaces, or privacy-preserving infrastructure.',
+      totalPrize: '$4,000 USDC',
+      missions: [
+        {
+          title: 'zkLogin Application (Moderate Difficulty)',
+          description: `Objective: 
+- Create an application that integrates and utilizes zkLogin.
+
+Key Tasks:
+- Implement zkLogin as the authentication method.
+- Showcase a real-world use case or user flow with zkLogin.
+- Provide seamless UX and secure session handling.`,
+          prize: 'Prize TBA'
+        },
+        {
+          title: 'On-chain Marketplace (Moderate Difficulty)',
+          description: `Objective: 
+- Build an on-chain marketplace utilizing Sui smart contracts as the backend.
+
+Key Tasks:
+- Design and implement core marketplace smart contracts using Move.
+- Support basic functionality (listing, purchasing, transferring assets).
+- You can either use the Kiosk standard, or implement another form of trading.`,
+          prize: 'Prize TBA'
+        },
+        {
+          title: 'Password Manager using Walrus & Seal (Advanced Difficulty)',
+          description: `Objective: 
+- Create a password manager using Walrus and Seal as backend infrastructure.
+
+Key Tasks:
+- Integrate Walrus and Seal for secure, privacy-preserving storage.
+- Implement user-friendly encryption and retrieval workflows.
+- Ensure compliance with best practices in data security.`,
+          prize: 'Prize TBA'
+        }
       ],
-      technologies: ['Ethereum', 'Solidity', 'IPFS', 'Smart Contracts', 'Web3.js']
+      docLink: 'https://suifoundation.notion.site/DEVMatch-Hackathon-2025-20337af41c6e80d4a3f9e76087f4f40c',
+      logo: '/sui-logo.webp'
     },
     {
-      id: 'ai',
-      icon: <Brain className="h-10 w-10 text-crystal-blue" />,
-      title: 'AI & Machine Learning',
-      description: 'Harness the power of artificial intelligence to create intelligent solutions.',
-      challenges: [
-        'Build an AI model that can generate space-themed art based on text prompts',
-        'Create a machine learning solution that helps predict environmental changes',
-        'Develop an AI assistant that helps developers write better code'
+      id: 'bga',
+      icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
+      sponsor: 'BGA (Blockchain for Good)',
+      description:
+        'Blockchain for Good Alliance (BGA) champions the use of blockchain technology to create positive, real-world social and environmental impact.',
+      totalPrize: '$2,000 USDC',
+      missions: [
+        {
+          title: 'TBA',
+          description: 'Mission description will be announced soon.',
+          prize: 'Prize TBA'
+        }
       ],
-      technologies: ['TensorFlow', 'PyTorch', 'GPT', 'Computer Vision', 'NLP']
+      docLink: 'https://blockchainforgood.dev/docs',
+      logo: '/BGA-Logo.png'
     },
     {
-      id: 'space',
-      icon: <Rocket className="h-10 w-10 text-crystal-blue" />,
-      title: 'Space Technology',
-      description: 'Push the boundaries of what\'s possible with space-focused technological innovations.',
-      challenges: [
-        'Create a visualization tool for space data from NASA APIs',
-        'Build a solution that addresses challenges in space exploration',
-        'Develop an educational platform about our solar system using AR/VR'
+      id: 'the_graph',
+      icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
+      sponsor: 'The Graph',
+      description:
+        'The Graph (GRT) is a decentralized indexing and query protocol for blockchain data. It allows developers to easily access and retrieve information from blockchains like Ethereum, enabling the creation and use of decentralized applications (dApps).',
+      totalPrize: '$2,000 USDC',
+      missions: [
+        {
+          title: 'TBA',
+          description: 'Mission description will be announced soon.',
+          prize: 'Prize TBA'
+        }
       ],
-      technologies: ['NASA APIs', 'Satellite Data', 'AR/VR', 'IoT', 'Data Visualization']
-    },
-    {
-      id: 'tools',
-      icon: <Wrench className="h-10 w-10 text-crystal-blue" />,
-      title: 'Developer Tools',
-      description: 'Craft innovative tools and solutions that empower the developer community.',
-      challenges: [
-        'Build a productivity tool for software developers',
-        'Create an innovative code editor extension',
-        'Develop a collaboration platform for remote development teams'
-      ],
-      technologies: ['VS Code Extensions', 'GitHub APIs', 'DevOps', 'CLI Tools', 'Automation']
+      docLink: 'https://blockchainforgood.dev/docs',
+      logo: '/the-graph-grt-logo.png'
     }
   ];
 
-  const [activeTrack, setActiveTrack] = useState<string>(tracks[0].id);
-
   return (
     <section id="tracks" className="section-container">
-      <h2 className="section-title">Hackathon Tracks</h2>
-      
+      <h2 className="section-title">Sponsor Track</h2>
+
       <div className="max-w-4xl mx-auto mb-12">
         <p className="text-lg text-gray-300 text-center">
-          Choose your cosmic path from four innovative tracks. Each track offers unique challenges 
-          designed to push the boundaries of technology and imagination.
+          This year’s challenge is brought to you by Blockchain for Good Alliance. Explore how blockchain can solve real-world problems and win exciting rewards.
         </p>
       </div>
-      
-      {/* Track selection */}
+
+      {/* Track Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {tracks.map((track) => (
           <button
             key={track.id}
             className={`px-6 py-3 rounded-lg font-orbitron font-medium transition-all duration-300 
-              ${activeTrack === track.id 
-                ? 'bg-crystal-gradient text-white shadow-lg shadow-crystal-blue/20' 
+              ${activeTrack === track.id
+                ? 'bg-crystal-gradient text-white shadow-lg shadow-crystal-blue/20'
                 : 'bg-space-blue text-gray-300 hover:bg-space-light'}`}
             onClick={() => setActiveTrack(track.id)}
           >
-            {track.title}
+            {track.sponsor}
           </button>
         ))}
       </div>
-      
-      {/* Active track details */}
-      {tracks.map((track) => (
-        <div 
-          key={track.id}
-          className={`gem-card p-8 transition-all duration-500 ${
-            activeTrack === track.id ? 'opacity-100 transform translate-y-0' : 'opacity-0 absolute -z-10'
-          }`}
-          style={{ display: activeTrack === track.id ? 'block' : 'none' }}
-        >
-          <div className="flex items-center mb-6">
-            <div className="p-3 rounded-full bg-space-dark mr-4">
-              {track.icon}
-            </div>
-            <h3 className="text-2xl md:text-3xl font-orbitron font-bold">{track.title}</h3>
-          </div>
-          
-          <p className="text-gray-300 text-lg mb-8">
-            {track.description}
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-xl font-orbitron font-bold mb-4 text-white">Challenges</h4>
-              <ul className="space-y-3">
-                {track.challenges.map((challenge, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-crystal-blue mr-2">•</span>
-                    <span className="text-gray-300">{challenge}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-xl font-orbitron font-bold mb-4 text-white">Suggested Technologies</h4>
-              <div className="flex flex-wrap gap-2">
-                {track.technologies.map((tech, index) => (
-                  <span 
-                    key={index}
-                    className="px-3 py-1 bg-space-blue rounded-full text-sm text-gray-300 border border-crystal-blue/30"
-                  >
-                    {tech}
-                  </span>
-                ))}
+
+      {/* Active Track Info */}
+      {tracks.map(
+        (track) =>
+          track.id === activeTrack && (
+            <div
+              key={track.id}
+              className="gem-card p-8 transition-all duration-500 opacity-100 transform translate-y-0"
+            >
+              <div className="flex items-center mb-6 gap-4">
+                <div className="p-2 rounded-full w-16 h-16 flex items-center justify-center overflow-hidden hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={track.logo}
+                    alt={`${track.sponsor} logo`}
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-orbitron font-bold">{track.sponsor}</h3>
               </div>
+
+              <p className="whitespace-pre-line text-gray-300 text-lg mb-6">{track.description}</p>
+
+              <div className="mb-6">
+                <h4 className="text-xl font-orbitron font-bold text-white flex items-center gap-2">
+                  <Gift className="w-5 h-5" /> Total Prize Pool
+                </h4>
+                <p className="text-crystal-blue text-lg">{track.totalPrize}</p>
+              </div>
+
+              <div className="mb-6">
+                <h4 className="text-xl font-orbitron font-bold mb-4 text-white">Missions</h4>
+                <ul className="space-y-4">
+                  {track.missions
+                    .slice(0, showAllMissions[track.id] ? track.missions.length : 1)
+                    .map((mission, index) => (
+                      <li key={`${track.id}-${index}`} className="border-l-4 border-crystal-blue pl-4">
+                        <p className="text-white font-bold">{mission.title}</p>
+                        <p className="text-gray-300 text-sm whitespace-pre-line">{mission.description}</p>
+                      </li>
+                    ))}
+
+                  {track.missions.length > 1 && (
+                    <div className="mt-4">
+                      <button
+                        onClick={() => toggleShowAllMissions(track.id)}
+                        className="text-xs text-crystal-blue underline"
+                      >
+                        {showAllMissions[track.id] ? 'Show Less Missions' : 'Show More Missions'}
+                      </button>
+                    </div>
+                  )}
+                </ul>
+              </div>
+
+              {track.docLink !== '#' && (
+                <div className="mt-6">
+                  <a
+                    href={track.docLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-crystal-blue text-white rounded-lg hover:bg-crystal-blue/80 transition"
+                  >
+                    <LinkIcon className="w-4 h-4 mr-2" />
+                    View Documentation
+                  </a>
+                </div>
+              )}
             </div>
-          </div>
-        </div>
-      ))}
+          )
+      )}
     </section>
   );
 };

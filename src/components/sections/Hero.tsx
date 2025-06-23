@@ -1,6 +1,6 @@
 import React from 'react';
 import CountdownTimer from '../ui/CountdownTimer';
-import { Zap } from 'lucide-react';
+
 
 const Hero: React.FC = () => {
   // Set your hackathon date here
@@ -38,8 +38,8 @@ const Hero: React.FC = () => {
         </div>
         
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-          <a href="#register" className="btn-primary flex items-center justify-center">
-            <Zap className="mr-2 h-5 w-5" />
+          <a href="https://devmatch-hackathon.devfolio.co/" target="_blank" className="btn-primary flex items-center justify-center">
+            
             Register Now
           </a>
           <a href="#about" className="btn-secondary">

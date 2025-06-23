@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import NavLink from '../ui/NavLink';
-
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,7 +21,6 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Tracks', href: '#tracks' },
-    { name: 'Prizes', href: '#prizes' },
     { name: 'Sponsors', href: '#sponsors' },
     { name: 'Schedule', href: '#schedule' },
     { name: 'FAQ', href: '#faq' },
@@ -37,11 +35,13 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
+            <img
+              src="/Devmatch-logo.jpg"
+              alt="DEVMatch Logo"
+              className="w-10 h-10 rounded-full object-cover"
+            />
             
-            <span className="font-orbitron font-bold text-2xl">
-              DEV<span className="text-blue-600">Match</span>
-            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -54,7 +54,7 @@ const Header: React.FC = () => {
           </nav>
 
           {/* CTA Button */}
-          <a href="#register" className="hidden md:block btn-primary">
+          <a href="https://devmatch-hackathon.devfolio.co/" target="_blank" className="hidden md:block btn-primary">
             Register Now
           </a>
 
@@ -88,14 +88,18 @@ const Header: React.FC = () => {
                 </a>
               </div>
             ))}
-            <div className="pt-2">
-              <a 
-                href="#register" 
-                className="block w-full text-center btn-primary"
-                onClick={() => setIsMenuOpen(false)}
+
+            {/* CTA Button (Mobile with Tooltip) */}
+            <div className="relative group pt-2">
+              <button
+                className="block w-full text-center btn-primary cursor-not-allowed opacity-60"
+                disabled
               >
                 Register Now
-              </a>
+              </button>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-sm rounded bg-gray-800 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 whitespace-nowrap">
+                Coming soon
+              </div>
             </div>
           </div>
         </div>
