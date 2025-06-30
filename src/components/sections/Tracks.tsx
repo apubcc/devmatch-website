@@ -80,16 +80,48 @@ Key Tasks:
       icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
       sponsor: 'BGA (Blockchain for Good)',
       description:
-        'Blockchain for Good Alliance (BGA) champions the use of blockchain technology to create positive, real-world social and environmental impact.',
+        'The Blockchain for Good Alliance (BGA) is a global non-profit organization that champions the use of blockchain technology for real-world impact.',
       totalPrize: '$2,000 USDC',
       missions: [
         {
-          title: 'TBA',
-          description: 'Mission description will be announced soon.',
+          title: `Aligned with the United Nations’ 17 Sustainable Development Goals (SDGs) to drive global impact.
+                        In submissions, please indicate which SDG(s) the project primarily supports.`,
+          description: ``,
+          prize: 'Prize TBA'
+        },
+        {
+          title: ``,
+          description: `
+          vv Some suggested further focus areas are vv`,
+          prize: ''
+        },
+        {
+          title: 'Security and Transparency',
+          description: `Blockchain-based supply chain tracking ensures authentic product origins and prevents fakes.`,
+          prize: 'Prize TBA'
+        },
+        {
+          title: 'Global Education Development',
+          description: `Verifiable blockchain credentials issued by institutions to prevent diploma fraud and increase global accessibility.`,
+          prize: 'Prize TBA'
+        },
+        {
+          title: 'Life and Health',
+          description: `Verifiable blockchain credentials issued by institutions to prevent diploma fraud and increase global accessibility.`,
+          prize: 'Prize TBA'
+        },
+        {
+          title: 'Sustainable Development',
+          description: `Carbon credit registries for transparent emissions tracking, allowing businesses to prove and trade verified carbon offsets.`,
+          prize: 'Prize TBA'
+        },
+        {
+          title: 'Reduction of Inequality',
+          description: `Decentralized ID systems for underserved populations, allowing access to financial services, aid distribution, and social benefits.`,
           prize: 'Prize TBA'
         }
       ],
-      docLink: 'https://blockchainforgood.dev/docs',
+      docLink: 'https://moledao.io/event/186a7a1c-274b-4d26-9679-c738f73033e7',
       logo: '/BGA-Logo.png'
     },
     {
@@ -171,7 +203,7 @@ Key Tasks:
                   {track.missions
                     .slice(0, showAllMissions[track.id] ? track.missions.length : 1)
                     .map((mission, index) => (
-                      <li key={`${track.id}-${index}`} className="border-l-4 border-crystal-blue pl-4">
+                      <li key={`${track.id}-${index}`} className=" pl-4">
                         <p className="text-white font-bold">{mission.title}</p>
                         <p className="text-gray-300 text-sm whitespace-pre-line">{mission.description}</p>
                       </li>
