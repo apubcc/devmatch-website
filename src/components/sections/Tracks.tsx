@@ -78,7 +78,7 @@ Key Tasks:
     {
       id: 'bga',
       icon: <HeartHandshake className="h-10 w-10 text-crystal-blue" />,
-      sponsor: 'BGA (Blockchain for Good)',
+      sponsor: 'Blockchain for Good Alliance (BGA)',
       description:
         'The Blockchain for Good Alliance (BGA) is a global non-profit organization that champions the use of blockchain technology for real-world impact.',
       totalPrize: '$2,000 USDC',
