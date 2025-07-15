@@ -14,6 +14,11 @@ const Sponsors: React.FC = () => {
 			width: 180,
 		},
 		{
+			name: "Oasis",
+			logo: "/oasis-logo.png",
+			width: 180,
+		},
+		{
 			name: "ChatAndBuild",
 			logo: "/CNB-Logomark-White.png",
 			width: 180,
