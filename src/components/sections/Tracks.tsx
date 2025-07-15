@@ -285,6 +285,67 @@ Note: The Oasis Foundation reserves the right to adjust the reward structure bas
 			docLink: "https://docs.oasis.io/",
 			logo: "/CNB-Logomark-White.png",
 		},
+		{
+			id: "chatandbuild",
+			icon: (
+				<HeartHandshake className="h-10 w-10 text-crystal-blue" />
+			),
+			sponsor: "ChatAndBuild",
+			description:
+				"ChatAndBuild Web3 Solutions Challenge focuses on leveraging Web3 technologies to create innovative solutions with real-world impact. Projects must demonstrate creativity, originality, and functionality while addressing practical problems using blockchain, smart contracts, decentralized applications (dApps), DAOs, token economies, DeFi, or decentralized identity systems.\n\nTeams that integrate Non-Fungible Agents (NFAs) into their projects will receive bonus points for innovative use cases such as on-chain trading AI Agents or wallet portfolio AI Agents.",
+			totalPrize:
+				"$1,000 Total Prize Pool (5 Winning Teams: $100 Cash + $100 Subscription Vouchers per Team)",
+			missions: [
+				{
+					title: "💰 Prize Structure",
+					description: `Winning Teams: 5 Teams
+Prize per Team: $100 Cash + $100 Subscription Vouchers
+Total Prize Pool: $1,000 USD
+
+All winning teams receive equal rewards - no ranking system.`,
+					prize: "",
+				},
+				{
+					title: "Web3 Focus Requirements",
+					description: `Projects must leverage Web3 technologies such as:
+• Blockchain
+• Smart contracts
+• Decentralized applications (dApps)
+• DAOs
+• Token economies
+• DeFi or decentralized identity systems
+
+Real-World Relevance:
+Solutions should address a practical problem or use case with potential for real-world impact or adoption.`,
+					prize: "",
+				},
+				{
+					title: "Submission Requirements",
+					description: `Project Submission Requirements:
+1. A screen recording as proof the published app is built using ChatAndBuild from scratch (YouTube, Twitter, Instagram Reels, etc.). Please tag ChatAndBuild in the post.
+2. Provide the published app link generated with ChatAndBuild
+3. Builders' stories submission, according to a list of questions provided
+
+Functionality: A working demo or prototype is expected — even a basic one — to show core features in action.
+
+Originality: Projects should demonstrate creativity, innovation, or a unique twist on an existing concept.`,
+					prize: "",
+				},
+				{
+					title: "Bonus Criteria",
+					description: `Teams that integrate Non-Fungible Agents (NFAs) into their projects will receive bonus points.
+
+Example use cases:
+• On-chain trading AI Agents
+• Wallet portfolio AI Agents
+
+NFAs can provide additional innovation points for creative integration with your Web3 solution.`,
+					prize: "",
+				},
+			],
+			docLink: "https://chatandbuild.ai/",
+			logo: "/Devmatch-logo.jpg",
+		},
 	];
 
 	return (
