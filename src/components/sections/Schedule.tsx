@@ -9,10 +9,24 @@ interface Event {
 	speakers?: string;
 }
 
+interface MainEvent {
+	time: string;
+	activity: string;
+	venue: string;
+	PIC: string;
+}
+
 interface DaySchedule {
 	date: string;
 	name: string;
 	events: Event[];
+}
+
+interface MainDaySchedule {
+	date: string;
+    name: string;
+    events: MainEvent[];
+
 }
 
 const workshopSchedule: DaySchedule[] = [
@@ -178,23 +192,153 @@ const workshopSchedule: DaySchedule[] = [
 	},
 ];
 
-const mainSchedule: DaySchedule[] = [
+const mainSchedule: MainDaySchedule[] = [
 	{
-		date: "August 8, 2025",
-		name: "Day 1",
-		events: [],
+	  date: "August 8, 2025",
+	  name: "Day 1",
+	  events: [
+		{
+		  time: "7:00 PM - 8:00 PM",
+		  activity: "Registration",
+		  venue: "Audi 1",
+		  PIC: "Registration",
+		},
+		{
+		  time: "7:00 PM - 8:00 PM",
+		  activity: "Dinner",
+		  venue: "Cafeteria",
+		  PIC: "F&B",
+		},
+		{
+		  time: "9:00 PM - 11:59 PM",
+		  activity: "Physical Hack Session",
+		  venue: "Classrooms Block D & Block E Level 7",
+		  PIC: "Committee",
+		},
+	  ],
 	},
 	{
-		date: "August 9, 2025",
-		name: "Day 2",
-		events: [],
+	  date: "August 9, 2025",
+	  name: "Day 2",
+	  events: [
+		{
+		  time: "12:00 AM - 9:00 AM",
+		  activity: "Physical Hacking Session",
+		  venue: "Classrooms Block D & Block E Level 7",
+		  PIC: "Committee",
+		},
+		{
+		  time: "9:00 AM - 10:00 AM",
+		  activity: "Registration",
+		  venue: "Audi 1",
+		  PIC: "Registration",
+		},
+		{
+		  time: "9:00 AM - 10:00 AM",
+		  activity: "Breakfast",
+		  venue: "Cafeteria",
+		  PIC: "F&B",
+		},
+		{
+		  time: "10:00 AM - 1:00 PM",
+		  activity: "Physical Hack + Mentorship Session",
+		  venue: "Classrooms Block D & Block E Level 7",
+		  PIC: "Committee",
+		},
+		{
+		  time: "1:00 PM - 2:00 PM",
+		  activity: "Lunch Break",
+		  venue: "Cafeteria",
+		  PIC: "F&B",
+		},
+		{
+		  time: "2:00 PM - 6:00 PM",
+		  activity: "Physical Hack + Mentorship Session",
+		  venue: "Classrooms Block D & Block E Level 7",
+		  PIC: "Committee",
+		},
+		{
+		  time: "6:00 PM - 7:00 PM",
+		  activity: "Dinner",
+		  venue: "Cafeteria",
+		  PIC: "F&B",
+		},
+		{
+		  time: "7:00 PM - 11:59 PM",
+		  activity: "Physical Hack Session",
+		  venue: "Classrooms Block D & Block E Level 7",
+		  PIC: "Committee",
+		},
+	  ],
 	},
 	{
-		date: "August 10, 2025",
-		name: "Day 3",
-		events: [],
+	  date: "August 10, 2025",
+	  name: "Day 3",
+	  events: [
+		{
+		  time: "12:00 AM - 8:00 AM",
+		  activity: "Physical Hack Session",
+		  venue: "Classrooms Block D & Block E Level 7",
+		  PIC: "Committee",
+		},
+		{
+		  time: "8:00 AM",
+		  activity: "Submission Due",
+		  venue: "—",
+		  PIC: "Committee",
+		},
+		{
+		  time: "8:00 AM - 9:00 AM",
+		  activity: "Registration",
+		  venue: "Audi 1",
+		  PIC: "Registration",
+		},
+		{
+		  time: "8:00 AM - 9:00 AM",
+		  activity: "Breakfast",
+		  venue: "Cafeteria",
+		  PIC: "F&B",
+		},
+		{
+		  time: "9:00 AM - 10:00 AM",
+		  activity: "Opening Ceremony",
+		  venue: "Audi 1",
+		  PIC: "Emcee",
+		},
+		{
+		  time: "10:00 AM - 12:00 PM",
+		  activity: "Physical Pitch Session",
+		  venue: "TBD",
+		  PIC: "Committee",
+		},
+		{
+		  time: "12:00 PM - 1:00 PM",
+		  activity: "Lunch Break",
+		  venue: "Cafeteria",
+		  PIC: "F&B",
+		},
+		{
+		  time: "1:00 PM - 4:00 PM",
+		  activity: "Physical Pitch Session",
+		  venue: "TBD",
+		  PIC: "Committee",
+		},
+		{
+		  time: "4:00 PM - 5:00 PM",
+		  activity: "Judging Time",
+		  venue: "Audi 1",
+		  PIC: "Committee",
+		},
+		{
+		  time: "5:00 PM - 7:00 PM",
+		  activity: "Prize Giving + Closing Ceremony",
+		  venue: "Audi 1",
+		  PIC: "Emcee",
+		},
+	  ],
 	},
-];
+  ];
+  
 
 const Schedule: React.FC = () => {
 	const [activeWorkshopDay, setActiveWorkshopDay] =
@@ -314,24 +458,7 @@ const Schedule: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="flex flex-wrap justify-center gap-4 md:gap-8 text-sm mb-8">
-					<div className="flex items-center">
-						<div className="w-3 h-3 rounded-full bg-crystal-blue mr-2"></div>
-						<span className="text-gray-300">Workshops</span>
-					</div>
-					<div className="flex items-center">
-						<div className="w-3 h-3 rounded-full bg-nebula-purple mr-2"></div>
-						<span className="text-gray-300">Activities</span>
-					</div>
-					<div className="flex items-center">
-						<div className="w-3 h-3 rounded-full bg-glowing-pink mr-2"></div>
-						<span className="text-gray-300">Milestones</span>
-					</div>
-					<div className="flex items-center">
-						<div className="w-3 h-3 rounded-full bg-star-yellow mr-2"></div>
-						<span className="text-gray-300">Breaks & Meals</span>
-					</div>
-				</div>
+				
 
 				<div>
 					<h4 className="text-2xl font-orbitron font-bold text-center mb-8">
@@ -339,41 +466,38 @@ const Schedule: React.FC = () => {
 					</h4>
 
 					{mainSchedule[activeDay].events.length > 0 ? (
-						<div className="space-y-6">
-							{mainSchedule[activeDay].events.map((event, index) => (
-								<div
-									key={index}
-									className={`gem-card p-6 border-l-4 ${getEventTypeClass(
-										event.type
-									)}`}>
-									<div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-										<h4 className="text-lg font-orbitron font-bold">
-											{event.title}
-										</h4>
-										<p className="text-crystal-blue font-orbitron">
-											{event.time}
-										</p>
-									</div>
-									<p className="text-gray-300 mb-2">
-										{event.description}
-									</p>
-									<div className="text-gray-400 text-sm">
-										Location: {event.location}
-									</div>
-								</div>
-							))}
-						</div>
-					) : (
-						<div className="gem-card p-6 text-center border-l-4 border-l-gray-600">
-							<h4 className="text-xl font-orbitron font-bold text-gray-300 mb-2">
-								Schedule To Be Confirmed
-							</h4>
-							<p className="text-gray-400">
-								Event details for this day will be announced soon.
-								Stay tuned!
-							</p>
-						</div>
-					)}
+  <div className="gem-card p-6 border-l-4 border-l-nebula-purple">
+    <div className="space-y-4">
+      {mainSchedule[activeDay].events.map((event, index) => (
+        <div
+          key={index}
+          className="flex flex-col md:flex-row md:justify-between md:items-start border-b border-gray-700 pb-4">
+          <div className="md:w-1/3 mb-2 md:mb-0">
+            <p className="text-crystal-blue font-orbitron text-sm">{event.time}</p>
+          </div>
+          <div className="md:w-2/3">
+            <h4 className="text-lg font-orbitron font-bold mb-1">
+              {event.activity}
+            </h4>
+            <p className="text-gray-300 text-sm">
+              <strong>Venue:</strong> {event.venue}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+) : (
+  <div className="gem-card p-6 text-center border-l-4 border-l-gray-600">
+    <h4 className="text-xl font-orbitron font-bold text-gray-300 mb-2">
+      Schedule To Be Confirmed
+    </h4>
+    <p className="text-gray-400">
+      Event details for this day will be announced soon. Stay tuned!
+    </p>
+  </div>
+)}
+
 				</div>
 			</div>
 		</section>

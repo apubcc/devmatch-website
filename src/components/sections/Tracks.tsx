@@ -344,7 +344,7 @@ NFAs can provide additional innovation points for creative integration with your
 				},
 			],
 			docLink: "https://chatandbuild.ai/",
-			logo: "/Devmatch-logo.jpg",
+			logo: "/CNB-Logomark-White.png",
 		},
 	];
 
