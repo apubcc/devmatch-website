@@ -29,6 +29,8 @@ interface MainDaySchedule {
 
 }
 
+
+
 const workshopSchedule: DaySchedule[] = [
 	{
 		date: "14 July 2025",
@@ -193,6 +195,36 @@ const workshopSchedule: DaySchedule[] = [
 ];
 
 const mainSchedule: MainDaySchedule[] = [
+	{
+		date: "August 2, 2025",
+		name: "Online Kickoff",
+		events: [
+		  {
+			time: "7:00 PM - 8:00 PM",
+			activity: "Hackathon Briefing & Submission Guide",
+			venue: "Online",
+			PIC: "Emcee",
+		  },
+		  {
+			time: "8:00 PM",
+			activity: "Online Hacking Start",
+			venue: "Online",
+			PIC: "",
+		  },
+		],
+	  },
+	  {
+		date: "August 2 - August 7, 2025",
+		name: "Online Hacking Period",
+		events: [
+		  {
+			time: "All Day",
+			activity: "Online Hacking Period",
+			venue: "Online",
+			PIC: "",
+		  },
+		],
+	  },
 	{
 	  date: "August 8, 2025",
 	  name: "Day 1",
