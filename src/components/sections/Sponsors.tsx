@@ -22,6 +22,12 @@ const Sponsors: React.FC = () => {
 			name: "ChatAndBuild",
 			logo: "/CNB-Logomark-White.png",
 			width: 180,
+
+		},
+		{
+			name: "Etherium",
+			logo: "/ETHF.png",
+			width: 180,
 		},
 	];
 
