@@ -25,7 +25,7 @@ const Sponsors: React.FC = () => {
 
 		},
 		{
-			name: "Etherium",
+			name: "Etherium Foundation",
 			logo: "/ETHF.png",
 			width: 180,
 		},

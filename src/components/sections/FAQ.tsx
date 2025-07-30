@@ -41,6 +41,10 @@ const FAQ: React.FC = () => {
       answer: 'Not at all! DEVMatch welcomes participants of all skill levels. We have designated tracks and challenges suitable for beginners, and our mentors will be available throughout the event to provide guidance and support.'
     },
     {
+      question: 'Can we present online?',
+      answer : 'No, at least 2 of your teammates must be present physically to pitch or your team is disqualifiedNo, at least 2 of your teammates must be present physically to pitch or your team is disqualified'
+    },
+    {
       question: 'How are projects judged?',
       answer: 'Projects will be evaluated based on innovation, technical complexity, design, practicality, and adherence to the chosen track. Each team will have the opportunity to present their project to a panel of judges, who will score according to these criteria.'
     },

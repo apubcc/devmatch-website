@@ -346,6 +346,84 @@ NFAs can provide additional innovation points for creative integration with your
 			docLink: "https://chatandbuild.ai/",
 			logo: "/CNB-Logomark-White.png",
 		},
+		{
+			id: "ETHEREUM Foundation",
+			icon: (
+				<HeartHandshake className="h-10 w-10 text-crystal-blue" />
+			),
+			sponsor: "Ethereum Foundation",
+			description:
+				"Ethereum is the most widely adopted smart contract platform powering a diverse ecosystem of decentralized applications. With robust Layer 2 scaling solutions and a thriving community, Ethereum enables secure, composable, and permissionless innovation.\n\nThis track highlights the most creative and impactful use cases leveraging stablecoins, Scaffold-ETH 2, and developer tools for prediction markets. Builders are encouraged to explore real-world utility, optimize for gas and UX, and contribute to Ethereum’s open-source stack.",
+			totalPrize:
+				"$3,000 USD (Best Track Prize: $1,000 × 3)",
+			missions: [
+				{
+					title: "💰 Prize Structure",
+					description: `Track Placement Prizes:
+Best Stablecoin Micropayments App: Up to $1,000 USD
+Best App Built Using Scaffold-ETH 2: Up to $1,000 USD
+Best Tooling for Prediction Markets: Up to $1,000 USD
+
+Total Prize Pool: $3,000 USD`,
+					prize: "",
+				},
+				{
+					title: "Best Stablecoin Micropayments App",
+					description: `This track rewards the best application that leverages stablecoins on Ethereum to enable fast, cost-effective, and user-friendly micropayments. 
+		
+		Key Tasks:
+		1. Use stablecoins (e.g. USDC, DAI, GHO) for payments below $1
+		2. Emphasize user experience and low transaction costs
+		3. Integrate with Layer 2s (e.g. Optimism, Base, Arbitrum) or account abstraction
+		4. Use cases may include tipping, in-game payments, metered APIs, recurring payments, etc.
+		5. Bonus: Creative monetization or integrations with public goods
+		
+		Resources:
+		• https://ethereum.org/en/developers/docs/stablecoins/
+		• https://docs.optimism.io/, https://docs.base.org/, https://docs.arbitrum.io/
+		• https://ethresear.ch/`,
+					prize: "$1,000 USD",
+				},
+				{
+					title: "Best App Built Using Scaffold-ETH 2",
+					description: `This track celebrates teams who ship the most creative or technically impressive application using Scaffold-ETH 2, the modern developer stack for rapid Ethereum dapp development. Whether you’re building a DeFi app, DAO dashboard, or NFT experience, we want to see you push the limits of what SE-2 can do.
+		
+		Key Tasks:
+		1. Build with Scaffold-ETH 2 as your developer stack
+		2. Include both smart contract logic and frontend integration
+		3. Utilize SE-2 features like components, hooks, deploy flows, etc.
+		4. Deliver polished UX and developer-focused tooling
+		5. Bonus: Extend SE-2 with custom modules or upstream contributions
+		
+		Resources:
+		• https://docs.scaffoldeth.io/
+		• https://github.com/scaffold-eth/scaffold-eth-2`,
+					prize: "$1,000 USD",
+				},
+				{
+					title: "Best Tooling for Prediction Markets",
+					description: `Prediction markets are powerful tools for aggregating collective intelligence, and Ethereum has the infrastructure to make them more trustless and permissionless. This track recognizes the best developer tooling, libraries, or infrastructure that improves how prediction markets are built, run, or interacted with on Ethereum
+		
+		Key Tasks:
+		1. Build tools for devs or market creators (e.g. UI kits, analytics, liquidity tools)
+		2. Support decentralized market creation/resolution
+		3. Integrate with existing protocols like Polymarket
+		4. Innovate on UX, AMMs, or dispute mechanisms
+		
+		Resources:
+		• https://github.com/Polymarket
+		• https://docs.gnosis.io/, https://docs.uma.xyz/
+		• https://ethereum.org/en/developers/docs/oracles/`,
+					prize: "$1,000 USD",
+				},
+			],
+			docLink:
+				"https://ethglobal.com/showcase",
+			logo: "/ETHF.png",
+		},
+		
+
+
 	];
 
 	return (
