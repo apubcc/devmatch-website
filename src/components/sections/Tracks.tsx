@@ -347,11 +347,11 @@ NFAs can provide additional innovation points for creative integration with your
 			logo: "/CNB-Logomark-White.png",
 		},
 		{
-			id: "ETHEREUM Foundation",
+			id: "Ecosystem Support Program",
 			icon: (
 				<HeartHandshake className="h-10 w-10 text-crystal-blue" />
 			),
-			sponsor: "Ethereum Foundation",
+			sponsor: "Ecosystem Support Program",
 			description:
 				"Ethereum is the most widely adopted smart contract platform powering a diverse ecosystem of decentralized applications. With robust Layer 2 scaling solutions and a thriving community, Ethereum enables secure, composable, and permissionless innovation.\n\nThis track highlights the most creative and impactful use cases leveraging stablecoins, Scaffold-ETH 2, and developer tools for prediction markets. Builders are encouraged to explore real-world utility, optimize for gas and UX, and contribute to Ethereum’s open-source stack.",
 			totalPrize:
@@ -419,7 +419,7 @@ Total Prize Pool: $3,000 USD`,
 			],
 			docLink:
 				"https://ethglobal.com/showcase",
-			logo: "/ETHF.png",
+			logo: "/EF-ESP.png",
 		},
 		
 

@@ -25,8 +25,8 @@ const Sponsors: React.FC = () => {
 
 		},
 		{
-			name: "Etherium Foundation",
-			logo: "/ETHF.png",
+			name: "Ecosystem Support Program",
+			logo: "/EF-ESP.png",
 			width: 180,
 		},
 	];
@@ -101,7 +101,11 @@ const Sponsors: React.FC = () => {
 								alt={sponsor.name}
 								width={sponsor.width}
 								height={sponsor.width}
-								className="object-contain"
+								className="object-contain max-w-full max-h-full"
+								style={{
+									maxWidth: sponsor.width + "px",
+									maxHeight: sponsor.width + "px"
+								}}
 							/>
 						</div>
 						<h3 className="mt-3 text-white text-sm text-center">
