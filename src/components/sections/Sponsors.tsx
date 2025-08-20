@@ -22,7 +22,6 @@ const Sponsors: React.FC = () => {
 			name: "ChatAndBuild",
 			logo: "/CNB-Logomark-White.png",
 			width: 180,
-
 		},
 		{
 			name: "Ecosystem Support Program",
@@ -69,6 +68,55 @@ const Sponsors: React.FC = () => {
 			name: "FSEC APU",
 			logo: "/logo_media/FSEC LOGO transparent bg - cheryl woo.png",
 		},
+		// Additional media partners from public/media-partners
+		{
+			name: "GDSC APU",
+			logo: "/media-partners/GDSC APU.jpg",
+		},
+		{
+			name: "Digtech PBU",
+			logo: "/media-partners/Digtech PBU logo - Thivyasree Chandragopal.png",
+		},
+		{
+			name: "Sunway Analytics Society",
+			logo: "/media-partners/logo - Sunway Analytics Society.png",
+		},
+		{
+			name: "ICDiDiK",
+			logo: "/media-partners/Logo_ICDiDiK - damia.jpeg",
+		},
+		{
+			name: "MBOT",
+			logo: "/media-partners/MBOT_LOGO-transparent - Alwin Chong.png",
+		},
+		{
+			name: "Pekom",
+			logo: "/media-partners/pekom logo - Marsya Al Fyrasha.PNG",
+		},
+		{
+			name: "PSP DigitalTech",
+			logo: "/media-partners/PSP_DigitalTech - Afifi Afdhal.png",
+		},
+		{
+			name: "Red Hat Club APU",
+			logo: "/media-partners/redhatclubAPU.jpg",
+		},
+		{
+			name: "STC",
+			logo: "/media-partners/STC with name (horizontal) - Boon Joon.png",
+		},
+		{
+			name: "Taylor's Blockchain Club",
+			logo: "/media-partners/Taylors Blockchain Club Logo - Z.jpeg",
+		},
+		{
+			name: "IMG_3903 - Kaikaiz",
+			logo: "/media-partners/IMG_3903 - Kaikaiz.jpeg",
+		},
+		{
+			name: "BATRISYIA IRDINA HURRIFARDZLIE",
+			logo: "/media-partners/122b9ad8-bad2-412e-909d-0f493a2363e3 - BATRISYIA IRDINA HURRIFARDZLIE.jpeg",
+		},
 	];
 
 	return (
@@ -104,7 +152,7 @@ const Sponsors: React.FC = () => {
 								className="object-contain max-w-full max-h-full"
 								style={{
 									maxWidth: sponsor.width + "px",
-									maxHeight: sponsor.width + "px"
+									maxHeight: sponsor.width + "px",
 								}}
 							/>
 						</div>
